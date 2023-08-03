@@ -1,0 +1,1 @@
+# GncYldzSignalRRabbitMq  projesi bir signal r ve Rabbitmq teknolojilerin kullanıldığı bir e mail gönderme projesidir. birden fazla mailin gönderimi esnasında oluşturulan kuyruğa gönderme işleminde verilerin hareketleri SignalR ile clientlere bildirilir.
