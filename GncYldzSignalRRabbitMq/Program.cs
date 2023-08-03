@@ -3,11 +3,16 @@ using GncYldzSignalRRabbitMq.Hubs;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCors(optiions=> optiions.AddDefaultPolicy(policy => policy.AllowCredentials()
-.AllowAnyHeader()
-.AllowAnyOrigin()
-.AllowAnyMethod()
-.SetIsOriginAllowed(x=>true)));
+builder.Services.AddCors(options =>
+{
+options.AddDefaultPolicy(policy =>
+{
+policy.AllowCredentials()
+      .AllowAnyHeader()
+      .WithOrigins("http://localhost:15672", "http://localhost:15672")
+      .AllowAnyMethod();
+});
+});
 
 builder.Services.AddSignalR();
 builder.Services.AddControllers();
